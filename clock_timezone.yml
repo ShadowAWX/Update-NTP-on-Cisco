@@ -6,11 +6,11 @@
 
   tasks:
     - name: Configure log timestamp format
-      cisco.ios.ios_config:
+      cisco.ios:
         lines:
           - service timestamps log datetime msec localtime show-timezone
 
     - name: Save configuration
-      cisco.ios.ios_command:
+      cisco.ios:
         commands:
           - write memory
