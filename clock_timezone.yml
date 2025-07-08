@@ -5,22 +5,12 @@
   connection: network_cli
 
   tasks:
-    - name: Configure clock timezone
-      cisco.ios.ios_config:
-        lines:
-          - conf t
-
-    - name: Configure clock timezone
+    - name: Configure log timestamp format
       cisco.ios.ios_config:
         lines:
           - service timestamps log datetime msec localtime show-timezone
 
-    - name: Save configuration (write memory)
-      cisco.ios.ios_command:
-        commands:
-          - end
-
-    - name: Save configuration (write memory)
+    - name: Save configuration
       cisco.ios.ios_command:
         commands:
           - write memory
